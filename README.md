@@ -67,3 +67,16 @@ npm install
 ### 系统logo来源 
 https://js.design/community?category=detail&type=resource&id=62ec394df46c9f794d2be2db
 
+## 预览
+
+主页
+
+![image](https://user-images.githubusercontent.com/90198481/212660162-11c2ddac-6a1c-44f9-968e-7405ebdedd98.png)
+
+夜间模式
+
+![image](https://user-images.githubusercontent.com/90198481/212660256-48d991cb-e450-4442-915a-0a9bf7e4fc13.png)
+
+英文版主页
+
+![image](https://user-images.githubusercontent.com/90198481/212660398-a528ba94-4d30-4ce5-a8fa-7a41e60fdf3c.png)
