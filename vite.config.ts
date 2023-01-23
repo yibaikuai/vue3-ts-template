@@ -3,8 +3,9 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'  // 需要安装 @types/node
 import {createSvgIconsPlugin} from "vite-plugin-svg-icons";
 import { UserConfig, ConfigEnv, loadEnv } from "vite";
-
+import { viteMockServe } from 'vite-plugin-mock'
 import eslintPlugin from "vite-plugin-eslint";
+import * as process from "process";
 // https://vitejs.dev/config/
 // console.log(process.cwd()) // D:\vite-vue3-ts // 当前工作目录
 
@@ -17,6 +18,10 @@ export default defineConfig({
             // 指定symbolId格式
             symbolId: 'icon-[dir]-[name]', // icon-文件夹名-文件名
       }),
+      viteMockServe({
+          mockPath: "./mock", // mock文件夹路径
+          localEnabled: true // 是否开启开发环境
+      })
         // eslintPlugin({
         //     include: ["src/**/*.{vue,js,ts,jsx,tsx}"],
         // }),
@@ -25,15 +30,15 @@ export default defineConfig({
         hmr: {
             overlay: false, // 关闭热更新的错误提示
         },
-        port: 8080,
+        port: 8080,  // 端口号
         cors: true, // 允许跨域
         host: '0.0.0.0', // 允许从ip启动,
         open: true, // 启动时自动打开浏览器
         proxy: {
             '/api': {
-                target: process.env.VITE_APP_BASEURL,
+                target: process.env.VITE_APP_API_BASEURL,
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, '')
+                // rewrite: (path) => path.replace(/^\/api/, '')
             }
         }
     },

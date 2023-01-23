@@ -8,6 +8,7 @@
           <div class="item-title">{{$t('dashboard.visitorNumber')}}</div>
           <el-divider></el-divider>
            <el-skeleton animated :loading="hasRender" :rows="2">
+             {{visitorNumber}}
           </el-skeleton>
         </div>
       </el-card>
@@ -16,6 +17,7 @@
           <div class="item-title">{{$t('dashboard.dealAmount')}}</div>
           <el-divider></el-divider>
           <el-skeleton animated :loading="hasRender" :rows="2">
+            {{dealAmount}}
           </el-skeleton>
         </div>
       </el-card>
@@ -24,6 +26,7 @@
           <div class="item-title">{{$t('dashboard.downloadNumber')}}</div>
           <el-divider></el-divider>
           <el-skeleton animated :loading="hasRender" :rows="2">
+            {{downloadNumber}}
           </el-skeleton>
         </div>
       </el-card>
@@ -32,6 +35,7 @@
           <div class="item-title">{{$t('dashboard.dealNumber')}}</div>
           <el-divider></el-divider>
           <el-skeleton animated :loading="hasRender" :rows="2">
+            {{dealNumber}}
           </el-skeleton>
         </div>
       </el-card>
@@ -54,9 +58,12 @@ import { LineChart, LineSeriesOption } from 'echarts/charts';
 import { UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 import {onMounted, onUpdated,ref} from "vue";
-import {useDark} from "@vueuse/core";
-const isDark = useDark();
+import {getDashBoardInfoApi} from "@/api/dashboard";
 echarts.use([GridComponent, LineChart, CanvasRenderer, UniversalTransition]);
+let visitorNumber = ref(0);
+let dealAmount = ref(0);
+let downloadNumber = ref(0);
+let dealNumber = ref(0);
 
 type EChartsOption = echarts.ComposeOption<
     GridComponentOption | LineSeriesOption
@@ -90,9 +97,18 @@ setTimeout(()=>{
    hasRender.value = false;
 },1000)
 
+const getDashBoardInfo = async ()=>{
+  let res = await getDashBoardInfoApi();
+  visitorNumber.value = res.visitorNumber;
+  dealAmount.value = res.dealAmount;
+  downloadNumber.value = res.downloadNumber;
+  dealNumber.value = res.dealNumber;
+}
+
 
 onMounted(() => {
   initChart();
+  getDashBoardInfo();
 })
 onUpdated(()=>{
   initChart();
