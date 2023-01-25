@@ -14,6 +14,7 @@
 -   [ ] 权限路由
 -   [ ] 优化动画效果
 -   [ ] Eslint代码规范化
+-   [ ] 支持tailwindcss
 -   [x] mock模拟数据
 
 ## 代码结构
@@ -34,10 +35,10 @@ src目录树如下：
 ├── utlis                    公共方法
 ├── views                    页面
 ├── App.vue                  入口页面
-├── env.d.ts                 环境变量
+├── env.d.ts                 声明文件
 ├── lang.d.ts                语言声明文件
 ├── main.ts                  入口文件
-└── vite-env.d.ts            vite环境变量
+└── vite-env.d.ts            vite声明文件
 ```
 
 ## 安装
