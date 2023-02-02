@@ -1,4 +1,4 @@
 export default {
-    "sider.dashboard.title": 'dashboard',
-    "sider.upload.title": 'upload',
-}
+    'sider.dashboard.title': 'dashboard',
+    'sider.upload.title': 'upload',
+};
