@@ -1,36 +1,36 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import path from 'path'  // 需要安装 @types/node
-import {createSvgIconsPlugin} from "vite-plugin-svg-icons";
-import { UserConfig, ConfigEnv, loadEnv } from "vite";
-import { viteMockServe } from 'vite-plugin-mock'
-import eslintPlugin from "vite-plugin-eslint";
-import * as process from "process";
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import path from 'path'; // 需要安装 @types/node
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import { UserConfig, ConfigEnv, loadEnv } from 'vite';
+import { viteMockServe } from 'vite-plugin-mock';
+import eslintPlugin from 'vite-plugin-eslint';
+import * as process from 'process';
 // https://vitejs.dev/config/
 // console.log(process.cwd()) // D:\vite-vue3-ts // 当前工作目录
 
 export default defineConfig({
-  plugins: [
-      vue(),
-      createSvgIconsPlugin({
+    plugins: [
+        vue(),
+        createSvgIconsPlugin({
             // 指定需要缓存的图标文件夹
             iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
             // 指定symbolId格式
             symbolId: 'icon-[dir]-[name]', // icon-文件夹名-文件名
-      }),
-      viteMockServe({
-          mockPath: "./mock", // mock文件夹路径
-          localEnabled: true // 是否开启开发环境
-      })
-        // eslintPlugin({
-        //     include: ["src/**/*.{vue,js,ts,jsx,tsx}"],
-        // }),
-  ],
+        }),
+        viteMockServe({
+            mockPath: './mock', // mock文件夹路径
+            localEnabled: true, // 是否开启开发环境
+        }),
+        eslintPlugin({
+            include: ['src/**/*.{vue,js,ts,jsx,tsx}'],
+        }),
+    ],
     server: {
         hmr: {
             overlay: false, // 关闭热更新的错误提示
         },
-        port: 8080,  // 端口号
+        port: 8080, // 端口号
         cors: true, // 允许跨域
         host: '0.0.0.0', // 允许从ip启动,
         open: true, // 启动时自动打开浏览器
@@ -39,8 +39,8 @@ export default defineConfig({
                 target: process.env.VITE_APP_API_BASEURL,
                 changeOrigin: true,
                 // rewrite: (path) => path.replace(/^\/api/, '')
-            }
-        }
+            },
+        },
     },
     resolve: {
         // alias: {
@@ -48,8 +48,8 @@ export default defineConfig({
         // },
         alias: [
             {
-                find: "@",
-                replacement: path.resolve(__dirname, "src"),
+                find: '@',
+                replacement: path.resolve(__dirname, 'src'),
             },
             {
                 find: 'vue-i18n',
@@ -63,8 +63,8 @@ export default defineConfig({
             less: {
                 charset: false,
                 additionalData: '@import "./src/styles/global.less";', // 不能少“ ; ”
-            }
-        }
+            },
+        },
     },
     // 配置打包
     build: {
@@ -74,17 +74,20 @@ export default defineConfig({
         sourcemap: false, // 是否开启sourcemap,
         chunkSizeWarningLimit: 500, // 限制单个文件的大小,
         rollupOptions: {
-            output:{
+            output: {
                 entryFileNames: 'js/[name].js',
                 chunkFileNames: 'js/[name].js',
                 assetFileNames: 'assets/[name].[ext]',
                 manualChunks(id) {
                     if (id.includes('node_modules')) {
-                        return id.toString().split('node_modules/')[1].split('/')[0].toString();
+                        return id
+                            .toString()
+                            .split('node_modules/')[1]
+                            .split('/')[0]
+                            .toString();
                     }
-                }
+                },
             },
         },
-    }
-})
-
+    },
+});
