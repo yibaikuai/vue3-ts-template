@@ -1,26 +1,22 @@
-import {defineStore} from "pinia";
+import { defineStore } from 'pinia';
 
 interface testType {
-    number:number
+    number: number;
 }
 
 export const useTestStore = defineStore({
     id: 'test',
-    state: ():testType => ({
-        number: 0
+    state: (): testType => ({
+        number: 0,
     }),
-    getters: {
-
-    },
+    getters: {},
     actions: {
-        setNumber(number:number):void {
-            this.number = number
-        }
-
+        setNumber(number: number): void {
+            this.number = number;
+        },
     },
     persist: {
         enabled: true,
-        encryptionKey: "vueTest",
-    }
-
-})
+        encryptionKey: 'vueTest',
+    },
+});

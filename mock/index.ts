@@ -1,4 +1,2 @@
-import dashboard from './api/dashboard'
-export { dashboard }
-
-
+import dashboard from './api/dashboard';
+export { dashboard };

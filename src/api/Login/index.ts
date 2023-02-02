@@ -1,5 +1,5 @@
-import {post} from "@/utils/http/axios";
-import {IResponse} from "@/utils/http/axios/type"; // 导入返回值类型接口
+import { post } from '@/utils/http/axios';
+import { IResponse } from '@/utils/http/axios/type'; // 导入返回值类型接口
 
 // 定义参数类型接口
 interface LoginDataType {
@@ -15,7 +15,7 @@ const loginApi = async (loginData: LoginDataType) => {
     await post<IResponse>({
         url: URL.login,
         data: loginData,
-    })
-}
+    });
+};
 
-export {loginApi}
+export { loginApi };

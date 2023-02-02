@@ -1,4 +1,4 @@
-import {defineStore} from "pinia";
+import { defineStore } from 'pinia';
 
 export const useLocaleStore = defineStore({
     id: 'locale',
@@ -6,16 +6,16 @@ export const useLocaleStore = defineStore({
         locale: 'zh-CN',
     }),
     getters: {
-        getLocale():string {
-            return this.locale
-        }
+        getLocale(): string {
+            return this.locale;
+        },
     },
     actions: {
         setLocale(locale: string) {
-            this.locale = locale
-            localStorage.setItem('locale', locale)
-        }
-    }
-})
+            this.locale = locale;
+            localStorage.setItem('locale', locale);
+        },
+    },
+});
 
-export default useLocaleStore
+export default useLocaleStore;

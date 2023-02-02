@@ -1,32 +1,31 @@
-import {defineStore} from "pinia";
+import { defineStore } from 'pinia';
 
 type pageType = {
-    isCollapse: boolean
-}
+    isCollapse: boolean;
+};
 
 export const usePageStore = defineStore({
     id: 'page',
-    state: ():pageType => ({
-        isCollapse: false
-    }
-    ),
+    state: (): pageType => ({
+        isCollapse: false,
+    }),
     getters: {
-        getIsCollapse():boolean {
-            return this.isCollapse
+        getIsCollapse(): boolean {
+            return this.isCollapse;
         },
     },
     actions: {
-        toggleIsCollapse():void {
-            this.isCollapse = !this.isCollapse
+        toggleIsCollapse(): void {
+            this.isCollapse = !this.isCollapse;
         },
-        setIsCollapse(isCollapse:boolean):void {
-            this.isCollapse = isCollapse
-        }
+        setIsCollapse(isCollapse: boolean): void {
+            this.isCollapse = isCollapse;
+        },
     },
     persist: {
         enabled: true,
-        encryptionKey: "page",
-    }
-})
+        encryptionKey: 'page',
+    },
+});
 
-export default usePageStore
+export default usePageStore;
