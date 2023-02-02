@@ -1,6 +1,6 @@
 # vue3-ts-template
 
-基于element plus的vue3.0+ts+vite的系统模板
+基于 element plus 的 vue3.0+ts+vite 的系统模板
 
 ## features
 
@@ -13,15 +13,15 @@
 -   [ ] 加载效果
 -   [ ] 权限路由
 -   [ ] 优化动画效果
--   [ ] Eslint代码规范化
--   [ ] 支持tailwindcss
--   [x] mock模拟数据
+-   [ ] Eslint 代码规范化
+-   [ ] 支持 tailwindcss
+-   [x] mock 模拟数据
 
 ## 代码结构
 
-src目录树如下：
+src 目录树如下：
 
-``` plain
+```plain
 
 ├── api                      接口请求
 ├── assets                   静态资源
@@ -45,11 +45,11 @@ src目录树如下：
 
 ### 前置条件
 
-- Node.js >= 16.0 （ node安装教程：https://www.runoob.com/nodejs/nodejs-install-setup.html ）
+-   Node.js >= 16.0 （ [node 安装教程](https://www.runoob.com/nodejs/nodejs-install-setup.html ) ）
 
-- 操作系统: Linux, Windows, Mac OSX
+-   操作系统: Linux, Windows, Mac OSX
 
-- 参考运行环境：node-16.17.0，windows-10
+-   参考运行环境：node-16.17.0，windows-10
 
 ### 安装前端依赖
 
@@ -58,13 +58,15 @@ src目录树如下：
 ```bash
 npm install
 ```
+
 ## 运行
 
-### 启动Web前端
+### 启动 Web 前端
 
-进入目录，运行`npm run dev`，即可启动Web前端。启动后，可在浏览器中输入`http://127.0.0.1:8080`访问系统。
+进入目录，运行`npm run dev`，即可启动 Web 前端。启动后，可在浏览器中输入`http://127.0.0.1:8080`访问系统。
 
-### 系统logo来源 
+### 系统 logo 来源
+
 https://js.design/community?category=detail&type=resource&id=62ec394df46c9f794d2be2db
 
 ## 预览
