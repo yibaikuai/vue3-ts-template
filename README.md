@@ -13,7 +13,7 @@
 -   [ ] 加载效果
 -   [ ] 权限路由
 -   [ ] 优化动画效果
--   [ ] Eslint 代码规范化
+-   [x] Eslint 代码规范化, Prettier 代码格式化
 -   [ ] 支持 tailwindcss
 -   [x] mock 模拟数据
 
@@ -45,7 +45,7 @@ src 目录树如下：
 
 ### 前置条件
 
--   Node.js >= 16.0 （ [node 安装教程](https://www.runoob.com/nodejs/nodejs-install-setup.html ) ）
+-   Node.js >= 16.0 （ [node 安装教程](https://www.runoob.com/nodejs/nodejs-install-setup.html) ）
 
 -   操作系统: Linux, Windows, Mac OSX
 
