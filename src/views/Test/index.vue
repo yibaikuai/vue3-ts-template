@@ -1,5 +1,5 @@
 <template>
-    <div>asdsa</div>
+    <div class="text-green-700">asdsa</div>
 </template>
 
 <script lang="ts" setup>

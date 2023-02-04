@@ -1,2 +1,3 @@
 import dashboard from './api/dashboard';
-export { dashboard };
+import login from './api/login';
+export { dashboard, login };

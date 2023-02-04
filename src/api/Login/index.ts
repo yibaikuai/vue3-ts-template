@@ -1,21 +1,18 @@
 import { post } from '@/utils/http/axios';
-import { IResponse } from '@/utils/http/axios/type'; // 导入返回值类型接口
-
+import { URL, LoginDataType, loginResponse, logOutResponse } from './types';
 // 定义参数类型接口
-interface LoginDataType {
-    username?: string;
-    password?: string;
-}
-// 定义地址枚举
-enum URL {
-    login = 'api/login',
-}
 
-const loginApi = async (loginData: LoginDataType) => {
-    await post<IResponse>({
+const loginApi = (loginData: LoginDataType) => {
+    return post<loginResponse>({
         url: URL.login,
         data: loginData,
     });
 };
 
-export { loginApi };
+const logOutApi = () => {
+    return post<logOutResponse>({
+        url: URL.loginOut,
+    });
+};
+
+export { loginApi, logOutApi };

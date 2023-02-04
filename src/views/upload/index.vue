@@ -31,29 +31,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .upload-icon {
         font-size: 70px;
         color: var(--text-color);
     }
+
     .el-upload__text {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         em {
             color: #409eff;
         }
     }
+
     .el-upload__tip {
         margin-top: 10px;
         color: #c0c4cc;
     }
 }
+
 :deep(.el-upload) {
     width: 300px;
     height: 100px;
     padding: 0 0;
     //border-radius: 20px;
 }
+
 :deep(.el-upload-dragger) {
     width: 300px;
     height: 150px;
@@ -63,10 +69,12 @@
     background-color: var(--bar-bg-color);
     transition: 0.5s;
 }
+
 :deep(.el-upload-dragger:hover) {
     border: 4px dashed var(--theme-color);
     transform: scale(1.05);
 }
+
 :deep(.el-divider__text) {
     background-color: var(--content-bg-color);
     color: var(--text-color);

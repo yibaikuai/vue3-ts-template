@@ -65,7 +65,7 @@
                             ></IconFont
                             >{{ $t('header.user.userCenter') }}
                         </el-dropdown-item>
-                        <el-dropdown-item>
+                        <el-dropdown-item @click="goLogOut">
                             <IconFont
                                 icon="ri:logout-circle-r-line"
                                 style="margin-right: 5px"
@@ -81,13 +81,20 @@
 
 <script lang="ts" setup>
 import { getCurrentInstance, ref } from 'vue';
-import { usePageStore, useLocaleStore } from '@/store';
+import { usePageStore, useLocaleStore, useUserStore } from '@/store';
+
 import useLocale from '@/hook/useLocale';
 const { changeLocale } = useLocale();
 import { isFull, toggleFull } from 'be-full';
+import { useDark, useToggle } from '@vueuse/core';
+import { logOutApi } from '@/api/Login';
+import { ElMessage } from 'element-plus';
+import { useRouter } from 'vue-router';
 const store = usePageStore();
 const localeStore = useLocaleStore();
+const userStore = useUserStore();
 const instance = getCurrentInstance();
+const router = useRouter();
 
 const toggleCollapse = () => {
     const collapseState = store.$state.isCollapse;
@@ -101,9 +108,11 @@ const toggleScreen = () => {
     full.value = !isFull();
     toggleFull();
 };
-import { useDark, useToggle } from '@vueuse/core';
-import { ElMessage } from 'element-plus';
-
+const goLogOut = async () => {
+    await logOutApi();
+    await router.push('/login');
+    userStore.setToken('');
+};
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 const toggleTheme = () => {

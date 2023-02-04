@@ -1,5 +1,4 @@
 import { MockMethod } from 'vite-plugin-mock';
-import Mock from 'mockjs';
 import { Random } from 'mockjs';
 const dealAmount = Random.integer(1000, 10000);
 const visitorNumber = Random.integer(1000, 10000);
