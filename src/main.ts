@@ -3,7 +3,6 @@ import './styles/style.css';
 import 'animate.css';
 import 'element-plus/dist/index.css';
 import './styles/global.less';
-import './styles/tailwindcss.css';
 import 'virtual:svg-icons-register'; //   这是一个虚拟模块，不会被打包，只会在开发环境中被解析，用于注册svg图标
 import i18n from '@/locale';
 
