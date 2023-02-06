@@ -13,6 +13,8 @@ import ElementPlus from 'element-plus';
 
 import { createPinia } from 'pinia';
 import { usePersist } from 'pinia-use-persist'; // 用于持久化pinia的数据
+import { useRegisterSW } from 'virtual:pwa-register/vue';
+useRegisterSW();
 const pinia = createPinia();
 const Mitt = mitt();
 pinia.use(usePersist);

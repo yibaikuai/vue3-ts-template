@@ -22,13 +22,11 @@
 import LayoutContent from './content/index.vue';
 import LayoutHeader from './header/index.vue';
 import LayoutAside from './sider/index.vue';
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
+import en from 'element-plus/dist/locale/en.mjs';
 import { ref, computed, getCurrentInstance } from 'vue';
 import { useLocaleStore } from '@/store';
 const localeStore = useLocaleStore();
-
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
-import en from 'element-plus/dist/locale/en.mjs';
-
 const instance = getCurrentInstance() as any;
 let currentlang = ref(localStorage.getItem('locale') || 'zh-CN');
 

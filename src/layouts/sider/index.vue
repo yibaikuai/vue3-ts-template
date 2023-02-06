@@ -54,13 +54,13 @@
 <script lang="ts" setup>
 import router from '@/router';
 import { ref } from 'vue';
-let activeIndex: string = router.currentRoute.value.path;
 import { getCurrentInstance } from 'vue';
 import { useDark } from '@vueuse/core';
 import { usePageStore } from '@/store';
 const store = usePageStore();
 const isDark = useDark();
 const instance = getCurrentInstance() as any;
+let activeIndex: string = router.currentRoute.value.path;
 let isCollapse = ref(false);
 instance?.proxy?.$Bus.on('toggle-collapse', (collapseState: boolean) => {
     isCollapse.value = collapseState;

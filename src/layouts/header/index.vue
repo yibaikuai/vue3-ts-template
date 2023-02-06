@@ -82,14 +82,14 @@
 <script lang="ts" setup>
 import { getCurrentInstance, ref } from 'vue';
 import { usePageStore, useLocaleStore, useUserStore } from '@/store';
-
-import useLocale from '@/hook/useLocale';
-const { changeLocale } = useLocale();
 import { isFull, toggleFull } from 'be-full';
 import { useDark, useToggle } from '@vueuse/core';
 import { logOutApi } from '@/api/Login';
 import { ElMessage } from 'element-plus';
 import { useRouter } from 'vue-router';
+import useLocale from '@/hook/useLocale';
+
+const { changeLocale } = useLocale();
 const store = usePageStore();
 const localeStore = useLocaleStore();
 const userStore = useUserStore();
