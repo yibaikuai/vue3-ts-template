@@ -8,6 +8,7 @@
 -   **国际化**：支持中英文切换
 -   **动画效果**：页面切换和元素进入时有动画效果
 -   **代码规范**：支持 Eslint 和 Prettier
+-   **PWA 缓存**：集成 workbox, 使用 service worker 缓存静态资源和离线缓存（生产环境）
 
 ## todo
 
@@ -15,7 +16,6 @@
 -   [ ] 权限路由
 -   [ ] 优化动画效果
 -   [x] Eslint 代码规范化, Prettier 代码格式化
--   [ ] 支持 tailwindcss
 -   [x] mock 模拟数据
 
 ## 代码结构
