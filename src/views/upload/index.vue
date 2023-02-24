@@ -18,10 +18,17 @@
             </template>
         </el-upload>
         <el-divider>{{ $t('upload.result') }}</el-divider>
+        <VirtualList :listData="data" :itemSize="100"></VirtualList>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import VirtualList from '@/components/VirtualList/index.vue';
+let data = [];
+for (let i = 0; i < 1000; i++) {
+    data.push({ id: i, value: i });
+}
+</script>
 
 <style scoped lang="less">
 .upload-area {
