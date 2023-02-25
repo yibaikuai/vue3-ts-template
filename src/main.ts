@@ -5,11 +5,13 @@ import 'element-plus/dist/index.css';
 import './styles/global.less';
 import 'virtual:svg-icons-register'; //   这是一个虚拟模块，不会被打包，只会在开发环境中被解析，用于注册svg图标
 import i18n from '@/locale';
+import 'default-passive-events';
 
 import SvgIcon from '@/components/SvgIcon/index.vue'; // 用于全局注册svg组件
 import mitt from 'mitt'; // 事件总线
 import router from '@/router/index';
 import ElementPlus from 'element-plus';
+import Directives from './directives';
 
 import { createPinia } from 'pinia';
 import { usePersist } from 'pinia-use-persist'; // 用于持久化pinia的数据
@@ -26,6 +28,7 @@ app.use(ElementPlus)
     .use(i18n)
     .use(router)
     .use(pinia)
+    .use(Directives)
     .component('SvgIcon', SvgIcon)
     .mount('#app');
 app.config.globalProperties.$Bus = Mitt;
