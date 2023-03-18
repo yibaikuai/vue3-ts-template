@@ -13,6 +13,7 @@ export default [
                 msg: '登录成功',
             };
         },
+        timeout: 1000,
     },
     {
         url: '/api/loginOut', // 注意，这里只能是string格式

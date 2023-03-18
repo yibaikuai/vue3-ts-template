@@ -29,6 +29,7 @@
                             type="primary"
                             class="login-form-button"
                             @click="login"
+                            :loading="isLoading"
                         >
                             {{ $t('login.goLogin') }}
                         </el-button>
@@ -45,6 +46,8 @@ import { loginInterface } from '@/interface/login';
 import { loginApi } from '@/api/Login';
 import { useUserStore } from '@/store';
 import { useRouter } from 'vue-router';
+import { useAutoRequest } from '@/hook/useLoading';
+const [isLoading, loginSubmit] = useAutoRequest(loginApi);
 const userStore = useUserStore();
 const router = useRouter();
 const loginForm: loginInterface = reactive({
@@ -56,7 +59,7 @@ const loginFormRules = {
     password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
 };
 const login = async () => {
-    let res = await loginApi(loginForm);
+    let res = await loginSubmit(loginForm);
     let { token } = res;
     userStore.setToken(token);
     await router.push('/');
